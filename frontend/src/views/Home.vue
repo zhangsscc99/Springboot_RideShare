@@ -132,8 +132,75 @@ export default {
 </script>
 
 <style scoped>
+/* 为主容器添加一些基础样式 */
 .home-page {
   padding-bottom: 50px;
+  background-color: #f8f8f8; /* 添加浅灰背景色增强层次感 */
+}
+
+/* 调整内容容器，添加标准边距 */
+.content-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px; /* 添加基础边距 */
+  box-sizing: border-box;
+}
+
+/* 保持图片容器样式 */
+.scene-image {
+  width: calc(100% + 24px); /* 扩展超出内容容器 */
+  margin-left: -12px; /* 负边距使图片能够延伸到页面边缘 */
+  margin-right: -12px;
+  margin-bottom: 20px;
+  min-height: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  overflow: hidden;
+}
+
+/* 将其他内容区域的左右内边距调整为统一值 */
+.headline, .mode-tabs, .hot-routes, .feature-section {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+/* 调整下载按钮区域的边距 */
+.download-section.top-position {
+  padding: 0 12px;
+  margin-bottom: 15px;
+}
+
+/* 响应式调整 */
+@media (min-width: 768px) {
+  .content-container {
+    padding: 0 24px; /* 大屏幕上增加边距 */
+  }
+  
+  .scene-image {
+    width: calc(100% + 48px); /* 对应调整大屏幕的图片宽度 */
+    margin-left: -24px;
+    margin-right: -24px;
+    border-radius: 0;
+  }
+  
+  .headline, .mode-tabs, .hot-routes, .feature-section {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+
+/* 对特大屏幕进行额外调整 */
+@media (min-width: 1240px) {
+  .scene-image {
+    width: 100%; /* 特大屏幕上不再延伸到边缘 */
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
 }
 
 .banner {
@@ -162,24 +229,12 @@ export default {
   margin-bottom: 16px;
 }
 
-.scene-image {
-  width: 100%;
-  height: 220px;
-  margin-bottom: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: white;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
 .scene-image img {
   width: 100%;
-  height: 100%;
+  height: auto;
+  max-height: 300px;
   object-fit: contain;
-  padding: 10px;
+  padding: 0;
 }
 
 .action-button {
@@ -297,13 +352,6 @@ export default {
 .feature-desc {
   color: #999;
   font-size: 12px;
-}
-
-.download-section.top-position {
-  margin-top: 16px;
-  margin-bottom: 10px;
-  text-align: center;
-  padding: 0 16px;
 }
 
 .download-button {
