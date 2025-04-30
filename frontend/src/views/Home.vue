@@ -5,6 +5,16 @@
       <div class="banner-text">校园拼车，安全便捷，香槟到芝加哥首选出行方式！</div>
     </div>
     
+    <!-- 将下载按钮移到这里 - 页面最上方 -->
+    <div class="download-section top-position">
+      <van-button class="download-button" @click="handleDownload">
+        <div class="download-content">
+          <van-icon name="down" class="download-icon" />
+          <div class="download-text">马上启程 - 下载客户端</div>
+        </div>
+      </van-button>
+    </div>
+    
     <!-- 主要内容 -->
     <div class="content-container">
       <!-- 主标语 -->
@@ -42,7 +52,7 @@
         </div>
       </div>
       
-      <!-- 功能区域 - 使用图标代替图片 -->
+      <!-- 功能区域 - 前三个功能并列 -->
       <div class="feature-section">
         <div class="feature-item" v-for="(feature, index) in features" :key="index">
           <van-icon :name="feature.icon" size="40" class="feature-icon" color="#1989fa" />
@@ -98,11 +108,6 @@ export default {
           icon: 'balance-o',
           title: '商旅省钱',
           desc: '企业用户专享'
-        },
-        {
-          icon: 'down',
-          title: '马上启程',
-          desc: '下载客户端'
         }
       ]
     }
@@ -118,6 +123,9 @@ export default {
     selectRoute(route) {
       this.$store.commit('setSelectedRoute', route)
       this.$router.push('/publish')
+    },
+    handleDownload() {
+      alert('正在准备下载客户端...')
     }
   }
 }
@@ -261,7 +269,7 @@ export default {
 
 .feature-section {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 15px;
   margin-top: 20px;
 }
@@ -289,5 +297,56 @@ export default {
 .feature-desc {
   color: #999;
   font-size: 12px;
+}
+
+.download-section.top-position {
+  margin-top: 16px;
+  margin-bottom: 10px;
+  text-align: center;
+  padding: 0 16px;
+}
+
+.download-button {
+  width: 100%;
+  max-width: 350px;
+  height: 48px;
+  border-radius: 24px !important;
+  background-color: #1890ff !important;
+  border: none !important;
+  box-shadow: 0 6px 12px rgba(24, 144, 255, 0.25);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.download-button:active {
+  transform: translateY(2px);
+  box-shadow: 0 3px 6px rgba(24, 144, 255, 0.2);
+}
+
+.download-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.download-icon {
+  font-size: 20px;
+  margin-right: 8px;
+  color: white;
+}
+
+.download-text {
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  font-family: 'PingFang SC', 'Microsoft YaHei', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+@media (max-width: 480px) {
+  .download-button {
+    max-width: 100%;
+  }
 }
 </style> 
