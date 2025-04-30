@@ -251,6 +251,20 @@ export default {
 
 .action-button {
   width: 80%;
+  height: 48px; /* 与下载按钮一致的高度 */
+  border-radius: 24px !important; /* 添加圆角 */
+  background-color: #1989fa !important; /* 明确设置背景色 */
+  border: none !important; /* 移除边框 */
+  box-shadow: 0 6px 12px rgba(25, 137, 250, 0.25); /* 添加阴影效果 */
+  transition: all 0.3s ease; /* 平滑过渡效果 */
+  font-size: 16px; /* 调整字体大小 */
+  font-weight: 500; /* 稍微加粗字体 */
+  letter-spacing: 0.5px; /* 调整字符间距 */
+}
+
+.action-button:active {
+  transform: translateY(2px);
+  box-shadow: 0 3px 6px rgba(25, 137, 250, 0.2);
 }
 
 .mode-tabs {
