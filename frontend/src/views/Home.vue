@@ -143,15 +143,15 @@ export default {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px; /* 添加基础边距 */
+  padding: 0 30px; /* 添加基础边距 */
   box-sizing: border-box;
 }
 
-/* 保持图片容器样式 */
+/* 修改图片容器样式，添加圆角 */
 .scene-image {
-  width: calc(100% + 24px); /* 扩展超出内容容器 */
-  margin-left: -12px; /* 负边距使图片能够延伸到页面边缘 */
-  margin-right: -12px;
+  width: calc(100% + 40px); /* 扩展宽度以适应左右边距 */
+  margin-left: -20px; /* 负边距匹配内容容器的padding */
+  margin-right: -20px;
   margin-bottom: 20px;
   min-height: 220px;
   display: flex;
@@ -159,6 +159,17 @@ export default {
   align-items: center;
   background-color: white;
   overflow: hidden;
+  border-radius: 12px; /* 添加圆角 */
+}
+
+/* 为图片本身也添加圆角，确保完整效果 */
+.scene-image img {
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  object-fit: contain;
+  padding: 0;
+  border-radius: 8px; /* 图片本身也添加圆角 */
 }
 
 /* 将其他内容区域的左右内边距调整为统一值 */
@@ -173,17 +184,17 @@ export default {
   margin-bottom: 15px;
 }
 
-/* 响应式调整 */
+/* 调整响应式设置 */
 @media (min-width: 768px) {
   .content-container {
     padding: 0 24px; /* 大屏幕上增加边距 */
   }
   
   .scene-image {
-    width: calc(100% + 48px); /* 对应调整大屏幕的图片宽度 */
+    width: calc(100% + 48px);
     margin-left: -24px;
     margin-right: -24px;
-    border-radius: 0;
+    border-radius: 16px; /* 大屏幕上增加圆角 */
   }
   
   .headline, .mode-tabs, .hot-routes, .feature-section {
@@ -192,13 +203,13 @@ export default {
   }
 }
 
-/* 对特大屏幕进行额外调整 */
+/* 特大屏幕调整 */
 @media (min-width: 1240px) {
   .scene-image {
-    width: 100%; /* 特大屏幕上不再延伸到边缘 */
+    width: 100%;
     margin-left: 0;
     margin-right: 0;
-    border-radius: 8px;
+    border-radius: 20px; /* 特大屏幕使用更大的圆角 */
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   }
 }
@@ -235,6 +246,7 @@ export default {
   max-height: 300px;
   object-fit: contain;
   padding: 0;
+  border-radius: 8px; /* 图片本身也添加圆角 */
 }
 
 .action-button {
