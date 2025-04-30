@@ -16,9 +16,9 @@
         </van-button>
       </div>
       
-      <!-- 使用在线图片资源 -->
+      <!-- 使用本地图片资源替换在线图片 -->
       <div class="scene-image">
-        <img src="https://img.freepik.com/free-vector/car-sharing-concept-illustration_114360-7511.jpg" alt="拼车场景" />
+        <img src="@/assets/images/pintu_blue.png" alt="拼车场景" />
       </div>
       
       <!-- 选项卡 -->
@@ -156,20 +156,22 @@ export default {
 
 .scene-image {
   width: 100%;
-  height: 200px;
+  height: 220px;
   margin-bottom: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f0f9ff;
+  background-color: white;
   border-radius: 8px;
   overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .scene-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  padding: 10px;
 }
 
 .action-button {

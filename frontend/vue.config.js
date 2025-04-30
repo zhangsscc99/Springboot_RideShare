@@ -7,7 +7,7 @@ module.exports = {
         errors: true
       }
     },
-    port: 8080,
+    port: 3030,
     hot: true
   }
 } 
