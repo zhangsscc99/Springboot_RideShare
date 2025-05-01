@@ -14,7 +14,7 @@
           <span class="mode-desc">车费分摊，互助出行</span>
         </div>
         <div :class="['mode-button', tripMode === 'rideshare' ? 'active' : '']" @click="tripMode = 'rideshare'">
-          <span class="mode-name">专车直达</span>
+          <span class="mode-name">包车直达</span>
           <span class="mode-desc">司机接单，高效直达</span>
         </div>
       </div>

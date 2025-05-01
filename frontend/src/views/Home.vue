@@ -34,7 +34,7 @@
       <!-- 选项卡 -->
       <div class="mode-tabs">
         <div :class="['tab', activeMode === 'carpool' ? 'active' : '']" @click="activeMode = 'carpool'">顺路拼车</div>
-        <div :class="['tab', activeMode === 'rideshare' ? 'active' : '']" @click="activeMode = 'rideshare'">专车直达</div>
+        <div :class="['tab', activeMode === 'rideshare' ? 'active' : '']" @click="activeMode = 'rideshare'">包车直达</div>
       </div>
       
       <!-- 热门路线 -->
